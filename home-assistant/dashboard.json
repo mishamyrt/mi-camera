@@ -1,0 +1,68 @@
+{
+  "views": [
+    {
+      "title": "Camera",
+      "path": "camera",
+      "cards": [
+        {
+          "type": "picture-glance",
+          "title": "Mi Camera",
+          "camera_image": "camera.10_3_0_214",
+          "camera_view": "live",
+          "entities": [
+            {
+              "entity": "button.mi_camera_left",
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "button.press",
+                "target": {
+                  "entity_id": "button.mi_camera_left"
+                }
+              }
+            },
+            {
+              "entity": "button.mi_camera_up",
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "button.press",
+                "target": {
+                  "entity_id": "button.mi_camera_up"
+                }
+              }
+            },
+            {
+              "entity": "button.mi_camera_down",
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "button.press",
+                "target": {
+                  "entity_id": "button.mi_camera_down"
+                }
+              }
+            },
+            {
+              "entity": "button.mi_camera_right",
+              "tap_action": {
+                "action": "perform-action",
+                "perform_action": "button.press",
+                "target": {
+                  "entity_id": "button.mi_camera_right"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "entities",
+          "show_header_toggle": false,
+          "entities": [
+            {
+              "entity": "switch.mi_camera_auto_tracking",
+              "name": "Auto tracking"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

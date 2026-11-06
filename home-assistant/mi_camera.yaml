@@ -1,0 +1,54 @@
+rest_command:
+  mi_camera_ptz:
+    url: "http://10.3.0.214:8080/ptz/{{ direction }}"
+    method: POST
+    timeout: 5
+
+switch:
+  - platform: rest
+    name: Mi Camera Auto Tracking
+    unique_id: mjsxj09cm_auto_tracking
+    resource: http://10.3.0.214:8080/tracking
+    body_on: "on"
+    body_off: "off"
+    is_on_template: "{{ value_json.enabled }}"
+    headers:
+      Content-Type: text/plain
+    icon: mdi:motion-sensor
+    timeout: 5
+    scan_interval: 15
+
+template:
+  - button:
+      - name: "Camera: left"
+        unique_id: mjsxj09cm_ptz_left
+        default_entity_id: button.mi_camera_left
+        icon: mdi:arrow-left
+        press:
+          - action: rest_command.mi_camera_ptz
+            data:
+              direction: left
+      - name: "Camera: right"
+        unique_id: mjsxj09cm_ptz_right
+        default_entity_id: button.mi_camera_right
+        icon: mdi:arrow-right
+        press:
+          - action: rest_command.mi_camera_ptz
+            data:
+              direction: right
+      - name: "Camera: up"
+        unique_id: mjsxj09cm_ptz_up
+        default_entity_id: button.mi_camera_up
+        icon: mdi:arrow-up
+        press:
+          - action: rest_command.mi_camera_ptz
+            data:
+              direction: up
+      - name: "Camera: down"
+        unique_id: mjsxj09cm_ptz_down
+        default_entity_id: button.mi_camera_down
+        icon: mdi:arrow-down
+        press:
+          - action: rest_command.mi_camera_ptz
+            data:
+              direction: down

@@ -1,0 +1,8 @@
+[package]
+name = "mi-camera-video"
+version = "0.1.0"
+edition = "2021"
+description = "Shared-memory video capture, HEVC helpers, and frame subscriptions for Xiaomi cameras"
+
+[dependencies]
+libc = "0.2"

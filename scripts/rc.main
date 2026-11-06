@@ -1,0 +1,24 @@
+#!/bin/sh
+
+case "$1" in
+    start)
+        umask 022
+        exec >/tmp/mi-camera-server.log 2>&1
+        binary=/mnt/sdcard/mi-camera-server/mi-camera-server
+        while [ ! -x "$binary" ] ||
+              [ ! -S /run/video_mainstream/control ] ||
+              [ ! -S /run/video_substream/control ]; do
+            sleep 2
+        done
+        while ! pidof miio_devicekit >/dev/null; do
+            sleep 2
+        done
+        # Wait for the device kit's startup callbacks and tracking grace period.
+        sleep 12
+        echo $$ >/run/mi-camera-server.pid
+        exec "$binary"
+        ;;
+    reset)
+        sleep 3
+        ;;
+esac

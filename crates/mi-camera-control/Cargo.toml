@@ -1,0 +1,5 @@
+[package]
+name = "mi-camera-control"
+version = "0.1.0"
+edition = "2021"
+description = "PTZ and persistent auto tracking HTTP API for Xiaomi MJSXJ09CM cameras"

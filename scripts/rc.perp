@@ -1,0 +1,3 @@
+#!/bin/sh
+chmod +t "$PERP_BASE/mi-camera-server" 2>/dev/null
+exec perpd "$PERP_BASE"

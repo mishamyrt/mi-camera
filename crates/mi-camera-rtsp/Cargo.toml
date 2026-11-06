@@ -1,0 +1,9 @@
+[package]
+name = "mi-camera-rtsp"
+version = "0.1.0"
+edition = "2021"
+description = "RTSP over TCP server with HEVC RTP and RTCP for Xiaomi camera video hubs"
+
+[dependencies]
+base64 = "0.22"
+mi-camera-video = { path = "../mi-camera-video" }

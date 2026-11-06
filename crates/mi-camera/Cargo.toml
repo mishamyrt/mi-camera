@@ -1,0 +1,13 @@
+[package]
+name = "mi-camera"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "mi-camera-server"
+path = "src/main.rs"
+
+[dependencies]
+mi-camera-control = { path = "../mi-camera-control" }
+mi-camera-rtsp = { path = "../mi-camera-rtsp" }
+mi-camera-video = { path = "../mi-camera-video" }
